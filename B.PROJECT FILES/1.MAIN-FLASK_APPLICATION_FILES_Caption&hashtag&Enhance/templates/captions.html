@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Captionific.</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/712365790c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='aos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='glightbox.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='swiper-bundle.min.css') }}">
+
+  <style media="screen">
+    body{
+      background-color: #1E002C;
+    }
+    .upbox{
+      text-align: center;
+
+    }
+    button,#sub_bt,#img_up_bt{
+      font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 14px 40px;
+    border-radius: 50px;
+    transition: 0.3s;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+      background-color: #351A42;
+      border: 1;
+      border-radius: 25px;
+      border-color: #493155;
+    }
+    button,#sub_bt:hover{
+      background-color: #351A42;
+      border: 1;
+      border-radius: 25px;
+      border-color: white;
+    }
+    .tk{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+    }
+    .layer1 {
+    position:absolute;
+
+}
+
+.layer2 {
+    position:relative;
+    width: 500px;
+    margin: 0%;
+
+}
+.kl{
+  font-family: var(--font-primary);
+font-weight: 500;
+font-size: 25px;
+color: white;
+letter-spacing: 1px;
+display: inline-block;
+
+}
+.drp{
+  width: 200px;
+  background-color: #351A42;
+  font-family: var(--font-primary);
+font-weight: 500;
+font-size: 20px;
+color: #886398;
+letter-spacing: 1px;
+display: inline-block;
+border: 1;
+height: 40px;
+border-radius: 5px;
+
+}
+#cap_hd{
+  font-size: 25px;
+  text-align: left;
+}
+
+.rkl{
+  font-family: var(--font-primary);
+font-weight: 500;
+font-size: 15px;
+color: white;
+letter-spacing: 1px;
+}
+.kn{
+  background-color: rgb(83, 56, 137);
+  color: #f9f7fb;
+  border-radius: 25px;
+  border-color: azure;
+  border-width: 1px;
+  font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.kn:hover{
+  border-color: rgb(82, 51, 136);
+  background-color: aliceblue;
+  color: #3d015b;
+
+}
+#cap_div{
+  background-color: #493155;
+  border-radius: 50px;
+  padding: 10px;
+}
+.kna{
+  background-color: transparent;
+  color: #b3afea;
+  font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 20px;
+    line-height: 1.6;
+    
+}
+  </style>
+</head>
+
+<body>
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 style="text-decoration: none;">Captionific<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+
+  <div id="bod"style="padding-left:50px; padding-right:50px;padding-top:50px;">
+
+<div class="">
+
+
+      <div class="ra" align="center" id="opts"style="padding-top:40px;float:right;height:400px;width:500px;">
+        <center>
+
+<form action="/predict" id="upload-file" method="post" enctype="multipart/form-data">
+
+
+        <table height='300px' style="padding:auto, 0;"cellpadding='20px'>
+          <tr class="tt">
+            <td ><label class="kl">Point of View</label></td>
+            <td>
+              <select name="view" id="view" class="drp" required>
+                <option value="first">First Person</option>
+                <option value="third">Third Person</option>
+              </select>
+            </td>
+
+          </tr class="tt">
+          <tr>
+            <td ><label class="kl">Mood</label></td>
+            <td>
+              <select name="md" id="md" class="drp" required>
+                <option value="Happy">Happy</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Sad">Sad</option>
+                <option value="Funny">Funny</option>
+                <option value="Romantic">Romantic</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="tt">
+            <td ><label class="kl">Size</label></td>
+            <td>
+              <select name="size" id="size" class="drp" required>
+                <option value="short">Short</option>
+                <option value="Long">Long</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <div align="center"><input type="submit" value="Generate Caption" id="sub_bt"></div>
+        </form>
+              </center></div>
+    </div>
+<div class="layer1">
+<div class="ba"style="padding: 20px;height:400px; width:500px; border-radius: 25px;">
+
+  <div class="upbox">
+  <form action="/upload" id="upload-file" method="post" enctype="multipart/form-data">
+    <h2 id="head" class="tk" style="color:#fff">Drag and drop a file or select add Image</h2>
+    <div align="center"><input type="file" name="file" id="img_up_bt" required></div><br>
+    <div align="center"><input type="submit" value="upload image" id = "sub_bt"></div>
+  </form>
+  </div>
+</div>
+    </div>{{hrr}}
+    {% if hrr %}
+    <div class="layer2">
+  <img id="mb" style="display: block;height:400px; width:500px; border-radius: 25px;margin: 0%;"  src="{{ url_for('static', filename='temp.jpg') }}" alt="">
+</div>
+    {%endif%}
+    
+
+    <div id="nb" style="display:none;" align="center">
+      <h2 id="cap_hd"class="tk" style="padding:5px ;padding-top: 10px;text-decoration: none;"><U>Caption</U></h2>
+      <div id="cap_div">
+        <table width="90%" cellspacing="5px"cellpadding="2px">
+          {% for  k,v in pred.items() %}
+          <tr>
+            <td class="rkl">{{k}}</td>
+            <td class="rkl" id="{{k}}">{{v}}</td>
+            <td style="width: 100px;"><button class="kn"  onclick="myFun({{k}})">Copy</button></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <h2 id="cap_hd"class="tk"style="padding:5px ;"><U style="text-decoration: none;">Hashtags</U></h2>
+      <div id="cap_div">
+        <p>
+        <h3 id="has"class="kna">
+          {% for a in hashs %}
+          {{a}}
+          {% endfor %}
+        </h3>
+        </p>
+      </div>
+      <button onclick="myFunction()">Copy text</button>
+      <script>
+        let hou = '{{hrr}}';
+
+        if (hou == '1') {
+          document.getElementById("mb").style.display = "block";
+        }
+        if (hou == '2') {
+          document.getElementById("mb").style.display = "block";
+          document.getElementById("nb").style.display = "block";
+        }
+
+
+
+
+
+        function myFunction() {
+          var copyText = '{{ras}}';
+          // Copy the text inside the text field
+          navigator.clipboard.writeText(copyText);
+          // Alert the copied text
+          alert("Copied the text: " + copyText);
+        }
+
+        function myFun(x) {
+          window.alert(x);
+          let text='{{pred[x]}}'
+
+          window.alert(text);
+          let u=text
+          navigator.clipboard.writeText(u);
+          window.alert("Copied the text: " + u);
+        }
+      </script>
+
+    </div>
+  </div>
+
+
+
+
+
+
+ 
+</body>
+
+</html>

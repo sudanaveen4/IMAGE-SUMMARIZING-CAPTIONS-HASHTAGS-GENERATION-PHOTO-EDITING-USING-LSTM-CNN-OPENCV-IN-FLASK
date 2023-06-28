@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Results</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='favicon.ico') }}" rel="icon">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-icons.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='aos.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='glightbox.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='swiper-bundle.min.css') }}">
+
+</head>
+
+<body style=" background-color: rgb(31, 0, 44);">
+
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index2.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Captionific<span>.</span></h1>
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+  </header><!-- End Header -->
+  <!-- End Header -->
+<div id="bod" class="container" style="padding-bottom: 600px;">
+<div class="text-center" id="imageSection" style="display: block;">
+    <h2 id="cap_hd" style="color: white"><u>Enhanced Image</u></h2>
+    <div id="cap_div">
+      <table class="jui"  style="margin-top: 30px;">
+        <tr>
+          <td>
+            <h2 align="center" style="color: white">Before</h2>
+          </td>
+          <td>
+            <h2 align="center" style="color: white">After</h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+             <img src="data:image/png;base64,{{ up_image }}" alt="uploaded Image" width="420px" height="320px" style="border-radius: 25px; margin-right: 30px; margin-top: 20px;" >
+          </td>
+          <td>
+            <img src="data:image/png;base64,{{ enhanced_image }}" alt="Enhanced Image" width="420px" height="320px" style="border-radius: 25px;">
+          </td>
+        </tr>
+
+
+      </table>
+    </div>
+</div>
+
+<script>
+function enhanceImage() {
+  let ora='{{tray}}';
+  if (ora == '1') {
+          document.getElementById("imageSection").style.display = "block";
+        }
+    var form = document.querySelector('form');
+    var formData = new FormData(form);
+
+    fetch(form.action, {
+        method: form.method,
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        var imageSection = document.getElementById('imageSection');
+        var enhancedImage = document.getElementById('enhanced_image');
+        enhancedImage.src = 'data:image/png;base64,' + data.enhanced_image;
+
+        // Show the image section
+        imageSection.style.display = 'block';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+</script>
+
+
+<div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='glightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='purecounter_vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='swiper-bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='validate.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
