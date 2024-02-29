@@ -41,10 +41,9 @@ By utilizing these hardware and software components, the project can be implemen
 ![](C.PROJECT%20REPORT/images/3%20(2).png)
 
 ![](C.PROJECT%20REPORT/images/4.png)
-
-![](C.PROJECT%20REPORT/images/5.png)
-
-![](C.PROJECT%20REPORT/images/6.png)
+select mood | select point of view
+--- | ---
+![](C.PROJECT%20REPORT/images/5.png) | ![](C.PROJECT%20REPORT/images/6.png)
 
 ![](C.PROJECT%20REPORT/images/7.png)
 
